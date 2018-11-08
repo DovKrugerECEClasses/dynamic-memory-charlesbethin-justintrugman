@@ -76,6 +76,16 @@ public:
     	}
 	}
 
+	friend ostream& operator <<(ostream& s, Bitmap b){
+		for(uint32_t i = 0; i < b.y; i++){
+			s << '\n';
+			for(uint32_t j = 0; j < b.x; j++){
+				s << setw(2) << b.p[j][i];
+			}
+		}
+		return s;
+	}
+
 };
 
 
