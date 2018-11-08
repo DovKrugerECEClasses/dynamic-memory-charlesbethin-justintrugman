@@ -1,6 +1,68 @@
+/* 
+Authors: Justin Trugman & Charles Bethin
+
+Reference: https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/
+
+*/
+
 #include <iostream>
 #include "Color.hh"
 using namespace std;
+
+class Bitmap{
+private:
+	uint32_t x,y;
+	Color **p;
+
+	void regLine(uint32_t x1, uint32_t x2, const Color& col){
+		for (uint32_t i = x1; i <= x2; i++){
+			p[i][i] = col;
+		}
+	}
+
+	void bresenhamLine(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2, const Color& col){
+		int m_new = 2 * (y2 - y1); 
+   		int slope_error_new = m_new - (x2 - x1); 
+
+  		for (int x = x1, y = y1; x <= x2; x++) 
+		{ 
+			p[x][y] = col;
+			slope_error_new += m_new; 
+		
+		
+			if (slope_error_new >= 0) 
+			{ 
+				y++; 
+				slope_error_new  -= 2 * (x2 - x1); 
+			} 
+		} 
+	}
+
+
+public:
+	Bitmap(uint32_t horizontal, uint32_t vertical) : x(horizontal), y(vertical), p(new Color[x]) {
+		for (uint32_t i = 0; i < y; i++){
+			p[i] = new Color [y];
+		}
+	}
+
+	void line(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2, const Color& col){
+		uint32_t dx = x2 - x1;
+		uint32_t dy = y2 - y1;
+
+		double dxdy = dy / dx;
+
+		if(dxdy == 1){
+			regLine(x1, x2, col);
+		} else {
+			bresenhamLine(x1, y1, x2, y2, col);
+		}
+	}
+
+};
+
+
+
 
 int main() {
 	Bitmap b(30,20); // 30 pixels across, 20 pixels high, each pixel RGBA
