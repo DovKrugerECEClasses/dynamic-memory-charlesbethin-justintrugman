@@ -2,10 +2,12 @@
 Authors: Justin Trugman & Charles Bethin
 
 Reference: https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/
+			https://www.geeksforgeeks.org/
 
 */
 
 #include <iostream>
+// #include <iomanip> Not sure if we need it or not
 #include "Color.hh"
 using namespace std;
 
@@ -57,6 +59,21 @@ public:
 		} else {
 			bresenhamLine(x1, y1, x2, y2, col);
 		}
+	}
+
+	void ellipse(uint32_t x, uint32_t y, uint32_t width, uint32_t height, const Color& color){
+		double iFillX = x - (width / 4) + 1;
+		double maxFillX = x + (width / 4);
+		for (uint32_t i = iFill; i < maxFill; i++){
+			p[i][y - (height / 2)] = color;
+      		p[i][y + (height / 2)] = color;
+		}
+		double iFillY = y - (height / 4) + 1;
+		double maxFillY = y + (height / 4);
+		for(uint32_t j = iFillY; j < maxFillY; j++){
+      		p[x - (width / 4)][j] = color;
+      		p[x+(width / 4)][j] = color;
+    	}
 	}
 
 };
