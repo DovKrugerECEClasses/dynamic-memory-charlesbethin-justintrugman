@@ -65,7 +65,7 @@ public:
 			p[i][y] = color;
 	}
 
-	void vertLine(uint32_t y1, uint32_t y2, uint32_t x, const Color& color) {
+	void vertLine(uint32_t x, uint32_t y1, uint32_t y2, const Color& color) {
 		for (int i = y1; i <= y2; i++)
 			p[x][i] = color;
 	}
@@ -81,38 +81,27 @@ public:
 	void drawRect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, const Color& color) {
 		horizLine(x, x+width, y, color);
 		horizLine(x, x+width, y+height, color);
-		vertLine(y, y+height, x, color);
-		vertLine(y, y+height, x+width, color);
+		vertLine(x, y, y+height, color);
+		vertLine(x+width, y, y+height, color);
 	}
 
-	void ellipse(int x, int y, int width, int height, const Color& color){
-		double iFillX = x - (width / 4) + 1 < 0 ? 0 : x - (width / 4) + 1;
-		double maxFillX = x + (width / 4) < 0 ? 0 : x + (width / 4);
-		double iFillY = y - (height / 4) + 1;
-		double maxFillY = y + (height / 4);
-
-		int yFill = (y * height - (height / 2)) < 0 ? (0): (y * height - (height / 2));
-		int yMax = (y * height + (height / 2) < 0) ? 0: y * height + (height / 2);
-		int xp = (x * height - (width / 4) < 0 ? 0: x * height - (width / 4));
-		int xColor = x * height + (width / 4) < 0 ? 0: x * height + (width / 4);
-
-
-		for (int i = iFillX; i < maxFillX; i++){
-			p[i][yFill] = color;
-      		p[i][yMax] = color;
+	void ellipse(uint32_t x, uint32_t y, uint32_t width, uint32_t height, const Color& color){
+		for (int i = y - (height/2); i < y + (height/2); i++){
+			for (int j = x - (width/2); j < x + (width/2); j++){
+				double dx = double(j) / double(width);
+				double dy = double(i) / double(height);
+				if (((dx*dx)+(dy*dy)) <= 1){
+					p[i][j] = color;
+				}
+			}
 		}
-		
-		for(int j = iFillY; j < maxFillY; j++){
-      		p[xp][j] = color;
-      		p[xColor][j] = color;
-    	}
 	}
 
 	friend ostream& operator <<(ostream& s, Bitmap b){
 		for(uint32_t i = 0; i < b.y; i++){
 			s << '\n';
-			s << setw(2);
 			for(uint32_t j = 0; j < b.x; j++){
+				s << setw(2);
 				s << b.p[j][i];
 			}
 		}
@@ -134,18 +123,18 @@ int main() {
 	Color BLACK(0, 0, 0);
 	
 	
-	b.line(0,0,   19,19, RED);
-	b.line(0,5,   29,10, BLUE); //Bresenham algorithm
+	// b.line(0,0,   19,19, RED);
+	// b.line(0,5,   29,10, BLUE); //Bresenham algorithm
 	//https://en.wikipedia.org/wiki/Bresenham's_line_algorithm
 
 	// https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
 	//TODO: b.line(0,100, 100,50, BLUE); //Wu algorithm
-	b.horizLine(0, 20, 19, GREEN); // from x=0 to x=20 at y=19
-	b.vertLine(5, 0,19, GREEN); // from y = 0 to y=19 at x = 5
-	b.fillRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
-	b.drawRect(10,10, 4, 3,WHITE); // x = 10, y =10 w=4, h=3
-  b.ellipse(15,0, 8, 5, RED);    // ellipse centered at (15,0) w= 8, h=5
-	cout << b;
+	// b.horizLine(0, 20, 19, GREEN); // from x=0 to x=20 at y=19
+	// b.vertLine(5, 0, 19, GREEN); // from y = 0 to y=19 at x = 5
+	// b.fillRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
+	// b.drawRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
+  	b.ellipse(15,0, 8, 5, RED);    // ellipse centered at (15,0) w= 8, h=5
+	cout << b << "\n\n";
 	/*
 R
  R

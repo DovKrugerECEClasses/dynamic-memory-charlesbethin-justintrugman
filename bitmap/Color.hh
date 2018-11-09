@@ -16,6 +16,7 @@ public:
 	}
 
 	friend std::ostream& operator <<(std::ostream& s, const Color& color) {
-		return s << color.rgba;
+		// return s << color.rgba;
+		return s << (color.rgba > 0 ? 1 : 0);
 	}
 };
