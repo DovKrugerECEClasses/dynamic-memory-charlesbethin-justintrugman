@@ -85,9 +85,18 @@ public:
 		vertLine(x+width, y, y+height, color);
 	}
 
-	void ellipse(uint32_t x, uint32_t y, uint32_t width, uint32_t height, const Color& color){
-		for (int i = y - (height/2); i < y + (height/2); i++){
-			for (int j = x - (width/2); j < x + (width/2); j++){
+	void ellipse(uint32_t xCenter, uint32_t yCenter, uint32_t width, uint32_t height, const Color& color){
+		// y 
+		int yZero = yCenter - (height/2) < 0 ? 0 : yCenter - (height/2);
+		int yMax = yCenter + (height/2) > y ? y : yCenter + (height/2);
+
+		// x
+		int xZero = xCenter - (width/2) < 0 ? 0: xCenter - (width/2);
+		int xMax = xCenter + (width/2) > x ? x : xCenter + (width/2);
+
+	// -2 > 0 other 		
+		for (int i = yZero; i < yMax; i++){
+			for (int j = xZero; j < xMax; j++){
 				double dx = double(j) / double(width);
 				double dy = double(i) / double(height);
 				if (((dx*dx)+(dy*dy)) <= 1){
