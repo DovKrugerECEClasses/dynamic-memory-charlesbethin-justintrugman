@@ -86,7 +86,7 @@ public:
 	}
 
 	void ellipse(uint32_t xCenter, uint32_t yCenter, uint32_t width, uint32_t height, const Color& color){
-		// y 
+		// // y 
 		int yZero = 0;
 		int yMax = 0;
 
@@ -104,7 +104,7 @@ public:
 
 
 
-		// x
+		// // x
 		int xZero = 0;
 		int xMax = 0;
 
@@ -122,10 +122,10 @@ public:
 
 
 	// -2 > 0 other 		
-		for (int i = yZero; i < yMax; i++){
-			for (int j = xZero; j < xMax; j++){
-				double dx = double(j) / double(width);
-				double dy = double(i) / double(height);
+		for (int i = xZero; i < xMax; i++){
+			for (int j = yZero; j < yMax; j++){
+				double dx = (i - xCenter) / double(width/2);
+				double dy = (j - yCenter) / double(height/2);
 				if (((dx*dx)+(dy*dy)) <= 1){
 					p[i][j] = color;
 				}
@@ -169,7 +169,7 @@ int main() {
 	// b.vertLine(5, 0, 19, GREEN); // from y = 0 to y=19 at x = 5
 	// b.fillRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
 	// b.drawRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
-  	b.ellipse(15,0, 8, 5, RED);    // ellipse centered at (15,0) w= 8, h=5
+  	b.ellipse(8,8, 16, 5, GREEN);    // ellipse centered at (15,0) w= 8, h=5
 	cout << b << "\n\n";
 	/*
 R
