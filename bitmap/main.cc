@@ -102,8 +102,6 @@ public:
 			yMax = yCenter + (height/2);
 		}
 
-
-
 		// // x
 		int xZero = 0;
 		int xMax = 0;
@@ -121,12 +119,12 @@ public:
 		}
 
 
-	// -2 > 0 other 		
+		// -2 > 0 other 		
 		for (int i = xZero; i < xMax; i++){
 			for (int j = yZero; j < yMax; j++){
-				double dx = (i - xCenter) / double(width/2);
-				double dy = (j - yCenter) / double(height/2);
-				if (((dx*dx)+(dy*dy)) <= 1){
+				double dx = ((i - xCenter)*(i - xCenter)) / (double(width/2) * double(width/2));
+				double dy = ((j - yCenter)*(j - yCenter)) / (double(height/2) * double(height/2));
+				if (dx+dy<= 1){
 					p[i][j] = color;
 				}
 			}
@@ -159,17 +157,17 @@ int main() {
 	Color BLACK(0, 0, 0);
 	
 	
-	// b.line(0,0,   19,19, RED);
-	// b.line(0,5,   29,10, BLUE); //Bresenham algorithm
+	b.line(0,0,   19,19, RED);
+	b.line(0,5,   29,10, BLUE); //Bresenham algorithm
 	//https://en.wikipedia.org/wiki/Bresenham's_line_algorithm
 
 	// https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm
-	//TODO: b.line(0,100, 100,50, BLUE); //Wu algorithm
-	// b.horizLine(0, 20, 19, GREEN); // from x=0 to x=20 at y=19
-	// b.vertLine(5, 0, 19, GREEN); // from y = 0 to y=19 at x = 5
-	// b.fillRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
-	// b.drawRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
-  	b.ellipse(8,8, 16, 5, GREEN);    // ellipse centered at (15,0) w= 8, h=5
+	// TODO: b.line(0,100, 100,50, BLUE); //Wu algorithm
+	b.horizLine(0, 20, 19, GREEN); // from x=0 to x=20 at y=19
+	b.vertLine(5, 0, 19, GREEN); // from y = 0 to y=19 at x = 5
+	b.fillRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
+	b.drawRect(10,10, 4, 3, BLACK); // x = 10, y =10 w=4, h=3
+  	b.ellipse(15,0, 8, 6, BLACK);    // ellipse centered at (15,0) w= 8, h=5
 	cout << b << "\n\n";
 	/*
 R
