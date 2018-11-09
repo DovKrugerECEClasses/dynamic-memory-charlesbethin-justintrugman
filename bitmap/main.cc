@@ -89,14 +89,14 @@ public:
 		double iFillX = x - (width / 4) + 1;
 		double maxFillX = x + (width / 4);
 		for (uint32_t i = iFillX; i < maxFillX; i++){
-			p[i][y - (height / 2)] = color;
-      		p[i][y + (height / 2)] = color;
+			p[i][y * height - (height / 2)] = color;
+      		p[i][y * height + (height / 2)] = color;
 		}
 		double iFillY = y - (height / 4) + 1;
 		double maxFillY = y + (height / 4);
 		for(uint32_t j = iFillY; j < maxFillY; j++){
-      		p[x - (width / 4)][j] = color;
-      		p[x+(width / 4)][j] = color;
+      		p[x * height - (width / 4)][j] = color;
+      		p[x * height + (width / 4)][j] = color;
     	}
 	}
 
