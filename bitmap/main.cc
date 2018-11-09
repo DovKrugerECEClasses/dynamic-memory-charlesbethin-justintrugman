@@ -85,18 +85,26 @@ public:
 		vertLine(y, y+height, x+width, color);
 	}
 
-	void ellipse(uint32_t x, uint32_t y, uint32_t width, uint32_t height, const Color& color){
-		double iFillX = x - (width / 4) + 1;
-		double maxFillX = x + (width / 4);
-		for (uint32_t i = iFillX; i < maxFillX; i++){
-			p[i][y * height - (height / 2)] = color;
-      		p[i][y * height + (height / 2)] = color;
-		}
+	void ellipse(int x, int y, int width, int height, const Color& color){
+		double iFillX = x - (width / 4) + 1 < 0 ? 0 : x - (width / 4) + 1;
+		double maxFillX = x + (width / 4) < 0 ? 0 : x + (width / 4);
 		double iFillY = y - (height / 4) + 1;
 		double maxFillY = y + (height / 4);
-		for(uint32_t j = iFillY; j < maxFillY; j++){
-      		p[x * height - (width / 4)][j] = color;
-      		p[x * height + (width / 4)][j] = color;
+
+		int yFill = (y * height - (height / 2)) < 0 ? (0): (y * height - (height / 2));
+		int yMax = (y * height + (height / 2) < 0) ? 0: y * height + (height / 2);
+		int xp = (x * height - (width / 4) < 0 ? 0: x * height - (width / 4));
+		int xColor = x * height + (width / 4) < 0 ? 0: x * height + (width / 4);
+
+
+		for (int i = iFillX; i < maxFillX; i++){
+			p[i][yFill] = color;
+      		p[i][yMax] = color;
+		}
+		
+		for(int j = iFillY; j < maxFillY; j++){
+      		p[xp][j] = color;
+      		p[xColor][j] = color;
     	}
 	}
 
