@@ -87,12 +87,39 @@ public:
 
 	void ellipse(uint32_t xCenter, uint32_t yCenter, uint32_t width, uint32_t height, const Color& color){
 		// y 
-		int yZero = yCenter - (height/2) < 0 ? 0 : yCenter - (height/2);
-		int yMax = yCenter + (height/2) > y ? y : yCenter + (height/2);
+		int yZero = 0;
+		int yMax = 0;
+
+		if (yCenter - (height/2) < 0){
+			yZero = 0;
+		} else {
+			yZero = yCenter - (height/2);
+		}
+
+		if (yCenter + (height/2) > y) {
+			yMax = y;
+		} else {
+			yMax = yCenter + (height/2);
+		}
+
+
 
 		// x
-		int xZero = xCenter - (width/2) < 0 ? 0: xCenter - (width/2);
-		int xMax = xCenter + (width/2) > x ? x : xCenter + (width/2);
+		int xZero = 0;
+		int xMax = 0;
+
+		if (xCenter - (width/2) < 0) {
+			xZero = 0;
+		} else {
+			xZero = xCenter - (width/2);
+		}
+
+		if (xCenter + (width/2) > x ) {
+			xMax = x;
+		} else {
+			xMax = xCenter + (width/2);
+		}
+
 
 	// -2 > 0 other 		
 		for (int i = yZero; i < yMax; i++){
