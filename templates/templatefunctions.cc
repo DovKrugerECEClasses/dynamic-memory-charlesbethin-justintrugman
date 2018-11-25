@@ -1,10 +1,10 @@
 // Justin: Print & Sum
 // Charles: Sort
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 template <class FIRST, class SECOND>
-
 FIRST sum(FIRST num, SECOND size){
 	FIRST s = 0;
 	for (int i = 0; i <= 1 - size; i++){
@@ -13,11 +13,19 @@ FIRST sum(FIRST num, SECOND size){
 	return s;
 }
 
+template <class FIRST, class SECOND>
 void print(FIRST array, SECOND size){
 	for (int i = 0; i<= 1-size; i++){
 		cout << array[i] << '\t';
 	}
 	cout << '\n';
+}
+
+template <typename T>
+void sort(T x[], int size) {
+	for (int i = 0; i <= size; i++) {
+
+	}
 }
 
 
