@@ -15,7 +15,7 @@ public:
 
 int main() {
 	GrowArray<int> a;
-	//TODO:	GrowArray b(1000);
+	GrowArray<int> b(1000);
 	for (int i = 0; i < 10; i++)
 		a.addEnd(i);
 
@@ -24,7 +24,7 @@ int main() {
 
 	GrowArray<Elephant> e;
 	e.addEnd(Elephant("Alice"));
-  e.addEnd(Elephant("Betty"));
+  	e.addEnd(Elephant("Betty"));
 	cout << e << '\n';
 }
 	
