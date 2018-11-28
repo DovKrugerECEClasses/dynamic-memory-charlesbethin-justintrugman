@@ -23,8 +23,14 @@ void print(T x[], int n) {
 
 template <typename T>
 void sort(T x[], int size) {
-	for (int i = 0; i <= size; i++) {
-
+	for (int i = 0; i < size-1; i++) {
+		for (int j = 0; j < size-2; j++) {
+			if (x[j] > x[j+1]) {
+				T tmp = x[j];
+				x[j] = x[j+1];
+				x[j+1] = tmp;
+			}
+		}
 	}
 }
 
