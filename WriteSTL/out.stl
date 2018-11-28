@@ -1,54 +1,54 @@
 solid Shape
-facet normal -1 0 -0
+facet normal -100 -0 -0
     outer loop
         vertex 0 0 0
         vertex 0 0 10
         vertex 0 10 0
     endloop
 endfacet
-facet normal -1 0 -0
+facet normal -100 -0 -0
     outer loop
         vertex 0 10 0
         vertex 0 0 10
         vertex 0 10 10
     endloop
 endfacet
-facet normal 0 -1 0
+facet normal 0 100 0
     outer loop
         vertex 0 10 0
         vertex 0 10 10
         vertex 10 10 0
     endloop
 endfacet
-facet normal 0 -1 0
+facet normal 0 100 0
     outer loop
         vertex 10 10 0
         vertex 0 10 10
         vertex 10 10 10
     endloop
 endfacet
-facet normal 1 0 0
+facet normal 100 -0 0
     outer loop
         vertex 10 10 0
         vertex 10 10 10
         vertex 10 0 0
     endloop
 endfacet
-facet normal 1 0 0
+facet normal 100 -0 0
     outer loop
         vertex 10 0 0
         vertex 10 10 10
         vertex 10 0 10
     endloop
 endfacet
-facet normal 0 1 0
+facet normal 0 -100 0
     outer loop
         vertex 10 0 0
         vertex 10 0 10
         vertex 0 0 0
     endloop
 endfacet
-facet normal 0 1 0
+facet normal 0 -100 0
     outer loop
         vertex 0 0 0
         vertex 10 0 10

@@ -52,7 +52,7 @@ public:
     }
 
     friend Vec3d findNormalVector(const Vec3d& u, const Vec3d& v) {
-        Vec3d result = Vec3d(u.y*v.z - v.y*u.z, u.x*v.z - v.x*u.z, u.x*v.y - v.x*u.y);
+        Vec3d result = Vec3d(u.y*v.z - v.y*u.z, -(u.x*v.z - v.x*u.z), u.x*v.y - v.x*u.y);
         return result.scaledBy(1/result.mag());
     }
 };
