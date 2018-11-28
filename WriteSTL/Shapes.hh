@@ -129,11 +129,12 @@ public:
         std::string output = "";
 
         for(int i = 0; i < n; i++) {
-            vertex[i] = Vec3d(radius*cos((i-1) * ((2 * PI)/n)), (radius*sin((i-1)*((2 * PI)/n))), 0);
+            vertex[i] = Vec3d(radius*cos(i*2*PI/n * (180 / PI)), radius*sin(i*2*PI/n * (180 / PI)), 0);
         }
 
         for(int i = 0; i < n; i++) {
-            Vec3d normalVector = findNormalVector(vertex[i] - (vertex[i] + Vec3d(0,0,height)), (vertex[i] + Vec3d(0,0,height)) -vertex[(i+1)%n]);
+            cout << vertex[i] << endl;
+            Vec3d normalVector = findNormalVector(vertex[(i+1)%n] - (vertex[i] + Vec3d(0,0,height)), Vec3d(0,0,-height));
 
             output += "facet normal " + normalVector.toString() + "\n";
             output += "    outer loop\n";
