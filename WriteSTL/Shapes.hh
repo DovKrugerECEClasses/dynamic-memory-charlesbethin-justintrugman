@@ -153,4 +153,8 @@ public:
 
         return output;
     }
+
+    double RadiansToDegrees(double radian){
+        return radian * (180/PI);
+    }
 };
