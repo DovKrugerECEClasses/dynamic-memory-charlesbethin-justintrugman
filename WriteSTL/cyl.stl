@@ -1,114 +1,114 @@
 solid Shape
-facet normal nan nan nan
+facet normal -0.989836 -0.14222 0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 9.5955 -2.8154 0
+        vertex 9.5955 -2.8154 20
+        vertex 10 0 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.989836 -0.14222 0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 10 0 0
+        vertex 9.5955 -2.8154 20
+        vertex 10 0 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.989836 0.14222 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 10 0 0
+        vertex 10 0 20
+        vertex 9.5955 2.8154 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.989836 0.14222 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 9.5955 2.8154 0
+        vertex 10 0 20
+        vertex 9.5955 2.8154 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.909757 0.41514 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 9.5955 2.8154 0
+        vertex 9.5955 2.8154 20
+        vertex 8.41471 5.403 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.909757 0.41514 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 8.41471 5.403 0
+        vertex 9.5955 2.8154 20
+        vertex 8.41471 5.403 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.756079 0.65448 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 8.41471 5.403 0
+        vertex 8.41471 5.403 20
+        vertex 6.55317 7.5535 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.756079 0.65448 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 6.55317 7.5535 0
+        vertex 8.41471 5.403 20
+        vertex 6.55317 7.5535 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.541233 0.84087 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 6.55317 7.5535 0
+        vertex 6.55317 7.5535 20
+        vertex 4.16147 9.093 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.541233 0.84087 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 4.16147 9.093 0
+        vertex 6.55317 7.5535 20
+        vertex 4.16147 9.093 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.282601 0.95924 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 4.16147 9.093 0
+        vertex 4.16147 9.093 20
+        vertex 1.4331 9.8968 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.282601 0.95924 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 1.4331 9.8968 0
+        vertex 4.16147 9.093 20
+        vertex 1.4331 9.8968 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.00110643 1 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex 1.4331 9.8968 0
+        vertex 1.4331 9.8968 20
+        vertex -1.4112 9.8999 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal -0.00110643 1 -0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex -1.4112 9.8999 0
+        vertex 1.4331 9.8968 20
+        vertex -1.4112 9.8999 20
     endloop
 endfacet
-facet normal nan nan nan
+facet normal 0.756079 -0.65448 0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 0
+        vertex -1.4112 9.8999 0
+        vertex -1.4112 9.8999 20
+        vertex 9.5955 -2.8154 0
     endloop
 endfacet
-facet normal nan nan nan
+facet normal 0.756079 -0.65448 0
     outer loop
-        vertex -4.14134 9.1022 0
-        vertex -4.14134 9.1022 20
-        vertex -4.14134 9.1022 20
+        vertex 9.5955 -2.8154 0
+        vertex -1.4112 9.8999 20
+        vertex 9.5955 -2.8154 20
     endloop
 endfacet
 

@@ -129,7 +129,7 @@ public:
         std::string output = "";
 
         for(int i = 0; i < n; i++) {
-            vertex[i] = Vec3d(radius*cos((n-1) * ((2 * PI)/n)), (radius*sin((n-1)*((2 * PI)/n))), 0);
+            vertex[i] = Vec3d(radius*cos((i-1) * ((2 * PI)/n)), (radius*sin((i-1)*((2 * PI)/n))), 0);
         }
 
         for(int i = 0; i < n; i++) {
