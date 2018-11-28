@@ -9,14 +9,14 @@ using namespace std;
 
 class Design {
 private:
-    vector<Shape*> shapes;
+    vector<const Shape*> shapes;
 
 public:
-    void add(Shape* s) {
-        shapes.push_back(s);
+    void add(const Shape& s) {
+        shapes.push_back(&s);
     }
 
-    void write(string file) {
+    void write(string file) const {
         ofstream f;
 
         f.open(file);
@@ -26,8 +26,6 @@ public:
             f<<"endsolid Shape" << std::to_string(i) <<'\n';
         }
         f.close();
-
-
     }
 
 };

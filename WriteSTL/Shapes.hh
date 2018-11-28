@@ -9,7 +9,7 @@ private:
 public:
     Shape(double x, double y, double z) : x(x), y(y), z(z) { }
     virtual double volume() = 0;
-    virtual std::string stl() = 0;
+    virtual std::string stl() const = 0;
 
     void translate(double xVal, double yVal, double zVal) {
         x += xVal;
@@ -19,6 +19,16 @@ public:
     double getX() { return x; }
     double getY() { return y; }
     double getZ() { return z; }
+
+    void write(string file) const {
+        ofstream f;
+
+        f.open(file);
+        f << "solid Shape" << '\n';
+        f << this->stl() << '\n';
+        f<<"endsolid Shape" <<'\n';
+        f.close();
+    }
 };
 
 class Cube: public Shape {
@@ -32,7 +42,7 @@ public:
         return sideLen * sideLen * sideLen;
     }
 
-    std::string stl() {
+    std::string stl() const {
         Vec3d sides[8] = {
             Vec3d(0, 0, 0).scaledBy(sideLen),
             Vec3d(0, 0, 1).scaledBy(sideLen),
@@ -107,5 +117,9 @@ public:
 
     double volume() {
         return PI * radius * radius * height;
+    }
+
+    std::string stl() const {
+        
     }
 };
