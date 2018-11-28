@@ -2,28 +2,29 @@
 
 #include "vector"
 #include "iostream"
+#include <fstream>
 using namespace std;
 
 
 
 class Design {
 private:
-    vector<shape*> exp;
+    vector<Shape*> shapes;
 
 public:
-    void add(shape* s) {
-        exp.push_back(s);
+    void add(Shape* s) {
+        shapes.push_back(s);
     }
 
     void write(string file) {
         ofstream f;
 
         f.open(file);
-        f<<"solid "<<f<<'\n';
-        for(int i=0;i<exp.size();i++){
-            exp[i]->writeIn(file);
+        for(int i=0;i<shapes.size();i++){
+            f << "solid Shape" << std::to_string(i) << '\n';
+            f << shapes[i]->stl() << '\n';
+            f<<"endsolid Shape" << std::to_string(i) <<'\n';
         }
-        f<<"endsolid "<<file<<'\n';
         f.close();
 
 
