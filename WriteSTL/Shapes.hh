@@ -150,10 +150,6 @@ public:
             output += "    endloop\nendfacet\n";
         }
 
-
-
-
-
-        
+        return output;
     }
 };
