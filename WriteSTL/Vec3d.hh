@@ -34,6 +34,10 @@ public:
         return stream.str();
     }
 
+    Vec3d add(const Vec3d& v) {
+        return *this + v;
+    }
+
     Vec3d scaledBy(double n) const {
         return Vec3d(x * n, y * n, z * n);
     }
@@ -51,8 +55,8 @@ public:
         return s;
     }
 
-    friend Vec3d findNormalVector(const Vec3d& u, const Vec3d& v) {
-        Vec3d result = Vec3d(u.y*v.z - v.y*u.z, -(u.x*v.z - v.x*u.z), u.x*v.y - v.x*u.y);
+    friend Vec3d findNormalVector(const Vec3d& v, const Vec3d& w) {
+        Vec3d result = Vec3d(v.y*w.z - v.z*w.y, v.z*w.x - v.x*w.z, v.x*w.y - v.y*w.x);
         return result.scaledBy(1/result.mag());
     }
 };
