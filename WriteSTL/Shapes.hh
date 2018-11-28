@@ -113,7 +113,7 @@ class Cylinder: public Shape {
 private:
     double radius;
     double height;
-    double PI = 1.141592653589793;
+    double PI = 1;
 public:
     Cylinder(): radius(0), height(0), Shape(0, 0, 0) {}
     Cylinder(double r, double h): radius(r), height(h), Shape(0, 0, 0) {}
@@ -129,12 +129,12 @@ public:
         std::string output = "";
 
         for(int i = 0; i <= n; i++) {
-            vertex[i] = Vec3d(radius*cos(i*2*PI/n * (180 / PI)), radius*sin(i*2*PI/n * (180 / PI)), 0);
+            vertex[i] = Vec3d(cos(RadiansToDegrees(i * (2*PI/n))), sin(RadiansToDegrees(i * (2*PI/n))), 0);
         }
 
         for(int i = 0; i < n; i++) {
-            std::cout << vertex[i] << endl;
-            Vec3d normalVector = findNormalVector(vertex[(i+1)%8] - vertex[i], Vec3d(0, 0, -height));
+            std::cout << vertex[i] << " - " << vertex[(i+1) %n] << endl;
+            Vec3d normalVector = findNormalVector(vertex[(i+1)%n] - vertex[i], Vec3d(0, 0, -height));
 
             output += "facet normal " + normalVector.toString() + "\n";
             output += "    outer loop\n";
@@ -154,7 +154,7 @@ public:
         return output;
     }
 
-    double RadiansToDegrees(double radian){
+    double RadiansToDegrees(double radian) const {
         return radian * (180/PI);
     }
 };

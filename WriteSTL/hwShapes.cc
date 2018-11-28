@@ -23,6 +23,7 @@ int main() {
 	double r = 10, height  = 20;
 	Cylinder cyl(r, height);
 	cyl.write("cyl.stl");
+	
 	d.add(c);
 	d.write("test.stl");
 }
