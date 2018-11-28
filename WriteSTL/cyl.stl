@@ -1,0 +1,115 @@
+solid Shape
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 0
+    endloop
+endfacet
+facet normal nan nan nan
+    outer loop
+        vertex -4.14134 9.1022 0
+        vertex -4.14134 9.1022 20
+        vertex -4.14134 9.1022 20
+    endloop
+endfacet
+
+endsolid Shape
