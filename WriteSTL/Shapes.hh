@@ -2,6 +2,8 @@
 
 #include <string>
 #include "Vec3d.hh"
+#include <cmath>
+
 
 class Shape {
 private: 
@@ -120,6 +122,37 @@ public:
     }
 
     std::string stl() const {
+        int n = 8;
+        Vec3d vertex[n];
+
+        std::string output = "";
+
+        for(int i = 0; i < n; i++) {
+            vertex[i] = Vec3d(radius*cos((n-1) * ((2 * PI)/n)), (radius*sin((n-1)*((2 * PI)/n))), 0);
+        }
+
+        for(int i = 0; i < n; i++) {
+            Vec3d normalVector = findNormalVector(vertex[i] - (vertex[i] + Vec3d(0,0,height)), (vertex[i] + Vec3d(0,0,height)) -vertex[(i+1)%n]);
+
+            output += "facet normal " + normalVector.toString() + "\n";
+            output += "    outer loop\n";
+            output += "        vertex " + vertex[i].toString() + "\n";
+            output += "        vertex " + (vertex[i] + Vec3d(0,0,height)).toString() + "\n";
+            output += "        vertex " + vertex[(i+1)%n].toString() + "\n";
+            output += "    endloop\nendfacet\n";
+
+            output += "facet normal " + normalVector.toString() + "\n";
+            output += "    outer loop\n";
+            output += "        vertex " + vertex[(i+1)%n].toString() + "\n";
+            output += "        vertex " + (vertex[i] + Vec3d(0,0,height)).toString() + "\n";
+            output += "        vertex " + (vertex[(i+1)%n] + Vec3d(0,0, height)).toString() + "\n";
+            output += "    endloop\nendfacet\n";
+        }
+
+
+
+
+
         
     }
 };
