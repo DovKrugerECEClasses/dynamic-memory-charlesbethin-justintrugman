@@ -19,9 +19,9 @@ public:
         y += yVal;
         z += zVal;
     }
-    double getX() { return x; }
-    double getY() { return y; }
-    double getZ() { return z; }
+    double getX() const { return x; }
+    double getY() const { return y; }
+    double getZ() const { return z; }
 
     void write(string file) const {
         ofstream f;
@@ -47,14 +47,14 @@ public:
 
     std::string stl() const {
         Vec3d sides[8] = {
-            Vec3d(0, 0, 0).scaledBy(sideLen).add(getX(), getY(), getZ()),
-            Vec3d(0, 0, 1).scaledBy(sideLen),
-            Vec3d(0, 1, 0).scaledBy(sideLen),
-            Vec3d(0, 1, 1).scaledBy(sideLen),
-            Vec3d(1, 1, 0).scaledBy(sideLen),
-            Vec3d(1, 1, 1).scaledBy(sideLen),
-            Vec3d(1, 0, 0).scaledBy(sideLen),
-            Vec3d(1, 0, 1).scaledBy(sideLen)
+            Vec3d(0, 0, 0).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(0, 0, 1).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(0, 1, 0).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(0, 1, 1).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(1, 1, 0).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(1, 1, 1).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(1, 0, 0).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ()),
+            Vec3d(1, 0, 1).scaledBy(sideLen) + Vec3d(getX(), getY(), getZ())
         };
 
         std::string output = "";
@@ -129,7 +129,7 @@ public:
         std::string output = "";
 
         for(int i = 0; i <= n; i++) {
-            vertex[i] = Vec3d(radius*cos(i * ((2*pi_double)/n)), radius*sin(i * ((2*pi_double)/n)), 0);
+            vertex[i] = Vec3d(radius*cos(i * ((2*pi_double)/n)), radius*sin(i * ((2*pi_double)/n)), 0) + Vec3d(getX(), getY(), getZ());
         }
 
         for(int i = 0; i < n; i++) {
@@ -155,7 +155,7 @@ public:
             output += "facet normal " + Vec3d(0, 0, 1).toString() + "\n";
             output += "    outer loop\n";
             output += "        vertex " + vertex[i].toString() + "\n";
-            output += "        vertex " + Vec3d(0, 0, 0).toString() + "\n";
+            output += "        vertex " + Vec3d(getX(), getY(), getZ()).toString() + "\n";
             output += "        vertex " + vertex[(i+1)%n].toString() + "\n";
             output += "    endloop\nendfacet\n";
         }
@@ -165,7 +165,7 @@ public:
             output += "    outer loop\n";
             output += "        vertex " + vertex[i].add(Vec3d(0, 0, height)).toString() + "\n";
             output += "        vertex " + vertex[(i+1)%n].add(Vec3d(0, 0, height)).toString() + "\n";
-            output += "        vertex " + Vec3d(0, 0, height).toString() + "\n";
+            output += "        vertex " + Vec3d(getX(), getY(), getZ() + height).toString() + "\n";
             output += "    endloop\nendfacet\n";
         }
 

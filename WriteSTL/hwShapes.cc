@@ -14,7 +14,7 @@ int main() {
 	double s = 10;
 	Cube c(s);
 
-	double x, y, z = 0;
+	double x, y, z = 10;
 	c.translate(x,y,z);
 	// rotate??
 	cout << c.volume() << '\n';
@@ -22,7 +22,6 @@ int main() {
   	d.add(c);
 	double r = 10, height  = 20;
 	Cylinder cyl(r, height);
-	cyl.translate(30, 30, 30);
-	d.add(cyl);
+	d.add(c);
 	d.write("test.stl");
 }
