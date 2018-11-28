@@ -6,6 +6,8 @@ https://en.wikipedia.org/wiki/STL_(file_format)
 	
  */
 #include "Shapes.hh"
+#include "Design.hh"
+#include "vector"
 
 int main() {
 	Design d;
