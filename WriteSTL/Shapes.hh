@@ -3,6 +3,7 @@
 #include <string>
 #include "Vec3d.hh"
 #include <cmath>
+#include <fstream>
 
 
 class Shape {
